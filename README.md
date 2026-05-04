@@ -1,6 +1,8 @@
 # yaren-webapp
 
-Frontend-only single scrolling page built with **Vite + React + Tailwind CSS**.
+Professional portfolio for **Yaren Kılıç** — a single-page site built with **Vite + React + Tailwind CSS**, focused on documenting a **coding and software-engineering learning path**.
+
+**Edit all copy and links** in [`src/site/personal.js`](src/site/personal.js).
 
 ## Run locally
 

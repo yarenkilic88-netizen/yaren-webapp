@@ -1,9 +1,10 @@
 import { Container } from '../shared/ui/Container.jsx'
 import { Button } from '../shared/ui/Button.jsx'
+import { site } from '../site/personal.js'
 
 const nav = [
   { href: '#about', label: 'About' },
-  { href: '#projects', label: 'Projects' },
+  { href: '#projects', label: 'Portfolio' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -15,7 +16,8 @@ export function Navbar() {
           href="#top"
           className="text-sm font-semibold tracking-tight text-white"
         >
-          Yaren<span className="text-violet-400">.</span>
+          {site.displayName}
+          <span className="text-violet-400">.</span>
         </a>
         <nav className="hidden items-center gap-6 md:flex">
           {nav.map((item) => (
@@ -27,8 +29,35 @@ export function Navbar() {
               {item.label}
             </a>
           ))}
+          <a
+            href={site.githubUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="text-sm text-white/70 hover:text-white"
+          >
+            GitHub
+          </a>
+          <a
+            href={site.linkedinUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="text-sm text-white/70 hover:text-white"
+          >
+            LinkedIn
+          </a>
         </nav>
         <div className="flex items-center gap-2">
+          <Button
+            as="a"
+            href={site.githubUrl}
+            variant="ghost"
+            size="sm"
+            className="hidden sm:inline-flex"
+            target="_blank"
+            rel="noreferrer"
+          >
+            @{site.handle}
+          </Button>
           <Button as="a" href="#contact" variant="secondary" size="sm">
             Contact
           </Button>

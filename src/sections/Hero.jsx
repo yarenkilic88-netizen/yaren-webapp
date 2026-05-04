@@ -1,5 +1,6 @@
 import { Container } from '../shared/ui/Container.jsx'
 import { Button } from '../shared/ui/Button.jsx'
+import { site } from '../site/personal.js'
 
 export function Hero() {
   return (
@@ -11,38 +12,42 @@ export function Hero() {
 
       <Container className="relative py-16 sm:py-24">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="inline-flex items-center rounded-full bg-white/5 px-3 py-1 text-xs font-medium text-white/70 ring-1 ring-white/10">
-            Frontend-only • React + Tailwind • Single page
+          <p className="inline-flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full bg-white/5 px-3 py-1.5 text-xs font-medium text-white/75 ring-1 ring-white/10">
+            <span>{site.universityLine}</span>
+            <span className="hidden text-white/30 sm:inline" aria-hidden>
+              ·
+            </span>
+            <span className="text-white/60">{site.location}</span>
           </p>
-          <h1 className="mt-6 text-balance text-4xl font-semibold tracking-tight text-white sm:text-6xl">
-            Build a clean, modern website that scales as you learn.
+          <p className="mt-8 text-sm font-medium tracking-wide text-violet-300/95">
+            {site.fullName}
+          </p>
+          <h1 className="mt-2 text-balance text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+            {site.tagline}
           </h1>
-          <p className="mt-6 text-pretty text-base text-white/70 sm:text-lg">
-            This project is structured with sections, features, and shared UI so
-            it stays organized when you add forms, API calls, and new content.
+          <p className="mt-6 text-pretty text-base leading-relaxed text-white/70 sm:text-lg">
+            {site.intro}
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button as="a" href="#projects" size="lg">
-              View projects
+              Portfolio & roadmap
             </Button>
             <Button as="a" href="#about" variant="secondary" size="lg">
-              Learn more
+              Background & approach
             </Button>
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-3">
-            {[
-              { k: 'Architecture', v: 'sections/features/shared' },
-              { k: 'No backend', v: 'static deploy friendly' },
-              { k: 'Fast UI', v: 'Tailwind + reusable components' },
-            ].map((item) => (
+            {site.heroHighlights.map((item) => (
               <div
-                key={item.k}
-                className="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10"
+                key={item.title}
+                className="rounded-2xl bg-white/5 p-4 text-left ring-1 ring-white/10"
               >
-                <p className="text-sm font-medium text-white">{item.k}</p>
-                <p className="mt-1 text-sm text-white/60">{item.v}</p>
+                <p className="text-sm font-medium text-white">{item.title}</p>
+                <p className="mt-1.5 text-sm leading-snug text-white/60">
+                  {item.detail}
+                </p>
               </div>
             ))}
           </div>
@@ -51,4 +56,3 @@ export function Hero() {
     </section>
   )
 }
-
