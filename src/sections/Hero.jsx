@@ -36,6 +36,10 @@ export function Hero() {
             <Button as="a" href="#about" variant="secondary" size="lg">
               Background & approach
             </Button>
+            <Button as="a" href="#about" variant="secondary" size="lg">
+              falan & filan
+              
+            </Button>
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-3">
